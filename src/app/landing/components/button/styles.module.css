@@ -1,0 +1,142 @@
+.button-animated {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  position: relative;
+  width: 250px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--orange-color-2);
+  border: 2px solid var(--orange-color-3);
+  border-radius: 30px;
+  color: var(--white);
+  font-size: 1.3rem;
+}
+
+.button__text {
+  position: absolute;
+  opacity: 1;
+  z-index: 20;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  stroke-linecap: round;
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  stroke-dasharray: 251.2;
+  stroke-dashoffset: 251.2;
+  fill: var(--orange-color-2);
+  stroke: var(--orange-color-3);
+  stroke-width: 5;
+  visibility: hidden;
+}
+
+.circle-pulse {
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 50%;
+  border: 1px solid var(--orange-color-3);
+  z-index: -1;
+  transform-origin: 50% 50%;
+}
+
+.circle-check {
+  position: absolute;
+  color: var(--orange-color-3);
+  z-index: 10;
+  opacity: 0;
+}
+
+.reduce-button-animation {
+  animation: animate-button 500ms ease-in forwards;
+}
+
+.hide-text-animation {
+  animation: hide 500ms ease-in forwards;
+}
+
+.circle-slide-animation {
+  animation: show 100ms ease-in-out forwards 500ms, fill 1s linear forwards 500ms;
+}
+
+.circle-check-animation {
+  animation: fadein 500ms forwards 1600ms;
+}
+
+.circle-pulse-animation {
+  animation: pulse-circle 500ms ease-in-out forwards;
+  animation-delay: 1600ms;
+}
+
+@keyframes show {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fill {
+  0% {
+    stroke-dashoffset: 251.2;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-button {
+  0% {
+    border: 2px solid var(--orange-color-3);
+    width: 250px;
+  }
+  100% {
+    border: 2px solid var(--orange-color-2);
+    width: 50px;
+  }
+}
+
+@keyframes pulse-circle {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}

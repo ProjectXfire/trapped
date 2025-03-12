@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  font-size: 5rem;
+  line-height: 5rem;
+  font-family: "eater", Helvetica, sans-serif;
+  color: var(--orange-color-1);
+}
+
+.animate-text {
+  animation: text 2.5s ease-in infinite;
+  transform: translateY(-100px);
+}
+
+@keyframes text {
+  0% {
+    transform: translateY(-100px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  75% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}

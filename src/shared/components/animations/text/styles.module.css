@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  font-family: "eater", Courier, monospace;
+}
+
+.letter {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.letter__char {
+  font-size: 2rem;
+  animation: char 2s ease-in-out infinite;
+}
+
+.letter__circle {
+  width: 0;
+  height: 0;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: circle 2s ease-in-out infinite;
+}
+
+@keyframes char {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.3;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes circle {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}

@@ -1,0 +1,153 @@
+.container {
+  min-width: 80px;
+  position: relative;
+}
+
+.button {
+  width: 100%;
+  position: relative;
+  top: 0px;
+  padding: 2px 10px;
+  position: relative;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  background-color: var(--orange-color-4);
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  z-index: 3;
+  box-shadow: 0px 2px 2px 1px var(--orange-color-1);
+}
+
+.button--secondary {
+  background-color: var(--purple-color-1);
+  box-shadow: 0px 2px 2px 1px var(--purple-color-2);
+}
+
+.button:active {
+  top: 3px;
+  box-shadow: 0px 0px 2px 1px var(--white);
+}
+
+.text {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  color: var(--orange-color-4);
+  z-index: 5;
+  transition: all 500ms ease;
+}
+
+.text--secondary {
+  color: var(--purple-color-1);
+}
+
+.block {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--orange-color-2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--orange-color-3);
+  border-radius: 5px;
+  z-index: 4;
+  transition: all 500ms ease;
+}
+
+.block--secondary {
+  background: var(--purple-color-2);
+  border: 1px solid var(--purple-color-3);
+}
+
+.body {
+  top: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+  transition: all 500ms ease;
+}
+
+.face {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: var(--orange-color-1);
+  border-radius: 50%;
+}
+
+.face--secondary {
+  background-color: var(--purple-color-4);
+}
+
+.left-eye {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: var(--orange-color-2);
+  border-radius: 50%;
+}
+
+.left-eye--secondary {
+  background-color: var(--purple-color-2);
+}
+
+.right-eye {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: var(--orange-color-2);
+  border-radius: 50%;
+}
+
+.right-eye--secondary {
+  background-color: var(--purple-color-2);
+}
+
+.left-hand {
+  width: 12px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  left: -20px;
+  border-radius: 50px;
+  background-color: var(--orange-color-1);
+}
+
+.left-hand--secondary {
+  background-color: var(--purple-color-4);
+}
+
+.right-hand {
+  width: 12px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  right: -20px;
+  border-radius: 50px;
+  background-color: var(--orange-color-1);
+}
+
+.right-hand--secondary {
+  background-color: var(--purple-color-4);
+}
+
+.container:hover .block {
+  width: 0%;
+  height: 0%;
+}
+
+.container:hover .text {
+  color: var(--white);
+}
+
+.container:hover .body {
+  top: -10px;
+}

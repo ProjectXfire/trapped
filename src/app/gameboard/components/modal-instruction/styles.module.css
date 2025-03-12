@@ -1,0 +1,26 @@
+.content {
+  background-color: var(--orange-color-2);
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-family: "eater", Courier, monospace;
+  color: var(--orange-color-4);
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+  color: var(--orange-color-4);
+}
+
+.instruction {
+  display: flex;
+  gap: 10px;
+}
+
+.instruction span {
+  font-weight: bold;
+}
