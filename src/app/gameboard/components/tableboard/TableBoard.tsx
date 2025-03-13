@@ -3,6 +3,7 @@ import { useTableBoard } from "../../states/useTableBoard";
 import styles from "./styles.module.css";
 import { ToastMessage } from "@/shared/components/messages";
 import { hasChance } from "@/shared/utils/has-change";
+import Block from "../block/Block";
 
 function TableBoard(): React.ReactElement {
   const table = useTableBoard((s) => s.tableboard);
@@ -94,18 +95,13 @@ function TableBoard(): React.ReactElement {
         >
           {table.map((rows, i) =>
             rows.map((block, k) => (
-              <li key={`${i}${k}`} className={styles.block} onClick={() => handleBlock(i, k)}>
-                <img className={styles.arrow} src="/arrow.gif" alt="arrow" />
-                <img className={styles.floor} src="/floor.jpg" alt="floor" />
-                {block.status === "removed" && (
-                  <img className={styles.hole} src="/hole.png" alt="hole" />
-                )}
-                {players.map((player, index) => (
-                  <div className={styles.player} key={index}>
-                    {player.position === `${i}:${k}` && <img src={player.avatar} alt="avatar" />}
-                  </div>
-                ))}
-              </li>
+              <Block
+                players={players}
+                blockStatus={block.status}
+                position={[i, k]}
+                onClick={handleBlock}
+                turn={playerTurn}
+              />
             ))
           )}
         </ul>
