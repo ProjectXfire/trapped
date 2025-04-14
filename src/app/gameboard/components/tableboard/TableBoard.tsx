@@ -79,7 +79,10 @@ function TableBoard(): React.ReactElement {
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ overflow: tableStatus !== "playing" ? "hidden" : "auto" }}
+    >
       {tableStatus !== "playing" && (
         <div className={styles["blocked-background"]}>
           <p className={styles["blocked-background__text"]}>Create a New Game 🕹️</p>
@@ -89,13 +92,14 @@ function TableBoard(): React.ReactElement {
         <ul
           className={styles.gameboard}
           style={{
-            gridTemplateColumns: `repeat(${columns}, 60px)`,
-            gridTemplateRows: `repeat(${columns}, 60px)`,
+            gridTemplateColumns: `repeat(${columns}, 1fr)`,
+            gridTemplateRows: `repeat(${columns}, 1fr)`,
           }}
         >
           {table.map((rows, i) =>
             rows.map((block, k) => (
               <Block
+                key={`${i}${k}`}
                 players={players}
                 blockStatus={block.status}
                 position={[i, k]}

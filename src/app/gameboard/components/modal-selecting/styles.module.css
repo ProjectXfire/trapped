@@ -1,8 +1,11 @@
 .container {
   width: 98%;
   max-width: 580px;
+  max-height: 90dvh;
   background-color: var(--orange-color-2);
   overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--purple-color-4) var(--purple-color-2);
 }
 
 .header {
